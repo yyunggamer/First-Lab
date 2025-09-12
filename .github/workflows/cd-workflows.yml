@@ -1,0 +1,50 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+    deploy:
+        needs: build   # wait until CI finishes
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Checkout repo
+          uses: actions/checkout@v4
+
+        - name: Configure AWS credentials
+          uses: aws-actions/configure-aws-credentials@v2
+          with:
+            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            aws-region: us-east-1   # change if different
+
+        - name: Deploy to ECS Fargate
+          run: |
+            # Register new task definition with latest Docker Hub images
+            BACKEND_IMAGE=${{ secrets.DOCKER_USER }}/myapp-backend:latest
+            FRONTEND_IMAGE=${{ secrets.DOCKER_USER }}/myapp-frontend:latest
+
+            # Replace images in task definition JSON
+            sed "s|<BACKEND_IMAGE>|$BACKEND_IMAGE|g; s|<FRONTEND_IMAGE>|$FRONTEND_IMAGE|g" ecs-task-def.json > ecs-task-def-updated.json
+
+            # Register new task definition
+            aws ecs register-task-definition \
+              --cli-input-json file://ecs-task-def-updated.json
+
+            # Force ECS to use the new task definition
+            aws ecs update-service \
+              --cluster myapp-cluster \
+              --service myapp-service \
+              --force-new-deployment
+
+            # Force ECS to use the new task definition
+            aws ecs update-service \
+              --cluster myapp-cluster \
+              --service myapp-service \
+              --force-new-deployment
+
+
+      
+
