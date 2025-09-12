@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_REGISTRY = "your-dockerhub-user"
+        DOCKER_REGISTRY = "j3y3"
         BACKEND_IMAGE = "${DOCKER_REGISTRY}/myapp-backend"
         FRONTEND_IMAGE = "${DOCKER_REGISTRY}/myapp-frontend"
     }
@@ -40,11 +40,5 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                sh "docker-compose down || true"
-                sh "docker-compose up -d"
-            }
-        }
     }
 }
