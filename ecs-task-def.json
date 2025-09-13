@@ -8,7 +8,7 @@
   "containerDefinitions": [
     {
       "name": "backend",
-      "image": "<BACKEND_IMAGE>",
+      "image": "j3y3/myapp-backend:latest",
       "portMappings": [
         {
           "containerPort": 8000,
@@ -19,7 +19,7 @@
     },
     {
       "name": "frontend",
-      "image": "<FRONTEND_IMAGE>",
+      "image": "j3y3/myapp-frontend:latest",
       "portMappings": [
         {
           "containerPort": 80,
@@ -30,4 +30,5 @@
     }
   ]
 }
+
 

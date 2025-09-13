@@ -64,7 +64,8 @@ jobs:
 
           # Force ECS to use the new task definition
           aws ecs update-service \
-            --cluster myapp-cluster \
-            --service myapp-service \
-            --force-new-deployment
+              --cluster myapp-cluster \
+              --service myapp-service \
+              --desired-count 1 \
+              --region us-east-1
 
