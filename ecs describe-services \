@@ -1,0 +1,125 @@
+{
+    "service": {
+        "serviceArn": "arn:aws:ecs:us-east-1:391757441861:service/myapp-cluster/myapp-service",
+        "serviceName": "myapp-service",
+        "clusterArn": "arn:aws:ecs:us-east-1:391757441861:cluster/myapp-cluster",
+        "loadBalancers": [],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 0,
+        "runningCount": 0,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:us-east-1:391757441861:task-definition/myapp-task:1",
+        "deploymentConfiguration": {
+            "deploymentCircuitBreaker": {
+                "enable": false,
+                "rollback": false
+            },
+            "maximumPercent": 200,
+            "minimumHealthyPercent": 100,
+            "strategy": "ROLLING",
+            "bakeTimeInMinutes": 0
+        },
+        "deployments": [
+            {
+                "id": "ecs-svc/0982091898836894855",
+                "status": "PRIMARY",
+                "taskDefinition": "arn:aws:ecs:us-east-1:391757441861:task-definition/myapp-task:1",
+                "desiredCount": 1,
+                "pendingCount": 0,
+                "runningCount": 0,
+                "failedTasks": 0,
+                "createdAt": "2025-09-12T13:37:20.336000+01:00",
+                "updatedAt": "2025-09-13T22:12:26.818000+01:00",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0cf214196cb010f9f",
+                            "subnet-0d174f343bf1b4627"
+                        ],
+                        "securityGroups": [
+                            "sg-0acf857f3b950d64d"
+                        ],
+                        "assignPublicIp": "ENABLED"
+                    }
+                },
+                "rolloutState": "IN_PROGRESS",
+                "rolloutStateReason": "ECS deployment ecs-svc/0982091898836894855 in progress."
+            }
+        ],
+        "roleArn": "arn:aws:iam::391757441861:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+            {
+                "id": "e7d57ead-4005-4fbe-b18c-9fdbd42e47da",
+                "createdAt": "2025-09-14T08:19:35.465000+01:00",
+                "message": "(service myapp-service) failed to launch a task with (error ECS was unable to assume the role 'arn:aws:iam::391757441861:role/ecsTaskExecutionRole' that was provided for this task. Please verify that the role being passed has the proper trust relationship and permissions and that your IAM user has permissions to pass this role.)."
+            },
+            {
+                "id": "7765597d-9a47-416d-97e9-df0e956a137b",
+                "createdAt": "2025-09-14T02:11:50.386000+01:00",
+                "message": "(service myapp-service) failed to launch a task with (error ECS was unable to assume the role 'arn:aws:iam::391757441861:role/ecsTaskExecutionRole' that was provided for this task. Please verify that the role being passed has the proper trust relationship and permissions and that your IAM user has permissions to pass this role.)."
+            },
+            {
+                "id": "97d00eed-d09c-4069-9f73-4fa581ffe775",
+                "createdAt": "2025-09-13T20:02:51.382000+01:00",
+                "message": "(service myapp-service) failed to launch a task with (error ECS was unable to assume the role 'arn:aws:iam::391757441861:role/ecsTaskExecutionRole' that was provided for this task. Please verify that the role being passed has the proper trust relationship and permissions and that your IAM user has permissions to pass this role.)."
+            },
+            {
+                "id": "2fd61f71-d2d0-44b6-b5b2-63666dbb7e2b",
+                "createdAt": "2025-09-13T13:57:00.996000+01:00",
+                "message": "(service myapp-service) failed to launch a task with (error ECS was unable to assume the role 'arn:aws:iam::391757441861:role/ecsTaskExecutionRole' that was provided for this task. Please verify that the role being passed has the proper trust relationship and permissions and that your IAM user has permissions to pass this role.)."
+            },
+            {
+                "id": "6e477070-3384-45eb-bba9-a453a83f354b",
+                "createdAt": "2025-09-13T07:54:41.537000+01:00",
+                "message": "(service myapp-service) failed to launch a task with (error ECS was unable to assume the role 'arn:aws:iam::391757441861:role/ecsTaskExecutionRole' that was provided for this task. Please verify that the role being passed has the proper trust relationship and permissions and that your IAM user has permissions to pass this role.)."
+            },
+            {
+                "id": "a61797d6-a8d1-4a6b-aab4-83a568db8772",
+                "createdAt": "2025-09-13T01:47:49.463000+01:00",
+                "message": "(service myapp-service) failed to launch a task with (error ECS was unable to assume the role 'arn:aws:iam::391757441861:role/ecsTaskExecutionRole' that was provided for this task. Please verify that the role being passed has the proper trust relationship and permissions and that your IAM user has permissions to pass this role.)."
+            },
+            {
+                "id": "eacb733b-8b09-4db8-8796-477ef707f404",
+                "createdAt": "2025-09-12T19:42:51.608000+01:00",
+                "message": "(service myapp-service) failed to launch a task with (error ECS was unable to assume the role 'arn:aws:iam::391757441861:role/ecsTaskExecutionRole' that was provided for this task. Please verify that the role being passed has the proper trust relationship and permissions and that your IAM user has permissions to pass this role.)."
+            },
+            {
+                "id": "ae164899-51a8-43e4-996f-2e85c993d476",
+                "createdAt": "2025-09-12T13:30:22.848000+01:00",
+                "message": "(service myapp-service) failed to launch a task with (error ECS was unable to assume the role 'arn:aws:iam::391757441861:role/ecsTaskExecutionRole' that was provided for this task. Please verify that the role being passed has the proper trust relationship and permissions and that your IAM user has permissions to pass this role.)."
+            }
+        ],
+        "createdAt": "2025-09-12T13:30:06+01:00",
+        "placementConstraints": [],
+        "placementStrategy": [],
+        "networkConfiguration": {
+            "awsvpcConfiguration": {
+                "subnets": [
+                    "subnet-0cf214196cb010f9f",
+                    "subnet-0d174f343bf1b4627"
+                ],
+                "securityGroups": [
+                    "sg-0acf857f3b950d64d"
+                ],
+                "assignPublicIp": "ENABLED"
+            }
+        },
+        "healthCheckGracePeriodSeconds": 0,
+        "schedulingStrategy": "REPLICA",
+        "deploymentController": {
+            "type": "ECS"
+        },
+        "createdBy": "arn:aws:iam::391757441861:user/j3y",
+        "enableECSManagedTags": false,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": false,
+        "availabilityZoneRebalancing": "ENABLED"
+    }
+}
